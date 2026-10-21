@@ -1,0 +1,16 @@
+# Files and folders excluded from deployment (rsync --exclude-from).
+/.git
+/.github
+/.gitignore
+/.distignore
+/node_modules
+/src
+/package.json
+/package-lock.json
+/CLAUDE.md
+
+# Design mockups / email examples (not referenced by the theme)
+/index.html
+/new-product-example.html
+/offer-example-email.html
+/email-internal-notification.html

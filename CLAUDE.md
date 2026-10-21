@@ -46,3 +46,7 @@ Styles are written in Sass (`src/scss/`) and compiled to `assets/css/main.css`, 
 
 - `npm run build` — compile compressed CSS
 - `npm run watch` — recompile on change (with source maps)
+
+## Deployment
+
+Pushing to `main` runs `.github/workflows/deploy.yml`: it builds the CSS and rsyncs the theme to the server over SSH (with `--delete`). Paths listed in `.distignore` are not deployed — add new dev-only files there.

@@ -61,8 +61,15 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          # Strip Windows line endings that can sneak in when pasting the key.
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
+          if ! ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null; then
+            echo "::error::SSH_PRIVATE_KEY is not a valid private key. Paste the whole file, including the BEGIN/END lines."
+            exit 1
+          fi
+          # Public fingerprint only; compare with the key in the server's authorized_keys.
+          echo "Deploy key fingerprint: $(ssh-keygen -lf ~/.ssh/deploy_key)"
           if [ -n "$SSH_KNOWN_HOSTS" ]; then
             printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           else
@@ -75,7 +82,7 @@ jobs:
         run: |
           rsync -avz --delete \
             --exclude-from=.distignore \
-            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes" \
             ./ "$SSH_USER@$SSH_HOST:${DEPLOY_PATH%/}/"
 
       - name: Clean up SSH key

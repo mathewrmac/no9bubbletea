@@ -1,0 +1,118 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "no9/icon-button",
+	"version": "1.0.0",
+	"title": "Icon Button",
+	"category": "design",
+	"icon": "button",
+	"description": "A button like the core Button block, with an image icon that swaps to a second image on hover.",
+	"keywords": [ "button", "link", "icon", "image", "hover" ],
+	"textdomain": "no9",
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"linkTarget": {
+			"type": "string"
+		},
+		"rel": {
+			"type": "string"
+		},
+		"width": {
+			"type": "number"
+		},
+		"iconId": {
+			"type": "number"
+		},
+		"iconUrl": {
+			"type": "string"
+		},
+		"iconAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 24
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "before"
+		},
+		"hoverIconId": {
+			"type": "number"
+		},
+		"hoverIconUrl": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"html": false,
+		"align": false,
+		"alignWide": false,
+		"reusable": false,
+		"color": {
+			"gradients": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+		"shadow": true,
+		"spacing": {
+			"padding": true,
+			"margin": [ "top", "bottom" ],
+			"__experimentalDefaultControls": {
+				"padding": true
+			}
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"styles": [
+		{ "name": "fill", "label": "Fill", "isDefault": true },
+		{ "name": "outline", "label": "Outline" }
+	],
+	"example": {
+		"attributes": {
+			"text": "Order now"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wp-block-button",
+	"render": "file:./render.php"
+}

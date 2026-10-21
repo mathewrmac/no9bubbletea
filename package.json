@@ -1,0 +1,13 @@
+{
+  "name": "no9",
+  "version": "1.0.0",
+  "private": true,
+  "description": "No.9 WordPress block theme",
+  "scripts": {
+    "build": "sass src/scss/main.scss assets/css/main.css --style=compressed --no-source-map",
+    "watch": "sass src/scss/main.scss assets/css/main.css --watch --embed-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}

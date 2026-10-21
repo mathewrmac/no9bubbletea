@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "no9/menu-categories",
+	"version": "1.0.0",
+	"title": "Menu Categories",
+	"category": "widgets",
+	"icon": "food",
+	"description": "Displays one or more Menu Category terms as price cards. Each product's size/temperature variants are aggregated under it.",
+	"keywords": [ "menu", "price", "category", "drinks" ],
+	"textdomain": "no9",
+	"attributes": {
+		"categoryIds": {
+			"type": "array",
+			"default": [],
+			"items": { "type": "number" }
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

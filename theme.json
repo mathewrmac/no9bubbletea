@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{
+					"color": "#232B4E",
+					"name": "Midnight Navy",
+					"slug": "navy"
+				},
+				{
+					"color": "#FBF6EC",
+					"name": "Warm Cream",
+					"slug": "cream"
+				},
+				{
+					"color": "#E0492B",
+					"name": "Tomato Red",
+					"slug": "red"
+				},
+				{
+					"color": "#1E1E24",
+					"name": "Charcoal",
+					"slug": "charcoal"
+				},
+				{
+					"color": "#FFFFFF",
+					"name": "White",
+					"slug": "white"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": null,
+			"wideSize": null
+		},
+		"spacing": {
+			"blockGap": null,
+			"units": [ "%", "px", "em", "rem", "vh", "vw" ]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "Poppins, sans-serif",
+					"name": "Poppins",
+					"slug": "poppins",
+					"fontFace": [
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/poppins/poppins-latin-600-normal.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/poppins/poppins-latin-700-normal.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/poppins/poppins-latin-700-italic.woff2" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "\"Noto Sans\", sans-serif",
+					"name": "Noto Sans",
+					"slug": "noto-sans",
+					"fontFace": [
+						{
+							"fontFamily": "Noto Sans",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/noto-sans/noto-sans-latin-wght-normal.woff2" ]
+						},
+						{
+							"fontFamily": "Noto Sans",
+							"fontStyle": "italic",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/noto-sans/noto-sans-latin-wght-italic.woff2" ]
+						}
+					]
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--noto-sans)",
+			"fontWeight": "400"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)",
+					"fontWeight": "700"
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header"
+		},
+		{
+			"area": "footer",
+			"name": "footer"
+		}
+	],
+	"version": 3
+}

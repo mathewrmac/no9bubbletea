@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "no9/logo-badge",
+	"version": "1.0.0",
+	"title": "Logo Badge",
+	"category": "design",
+	"icon": "update",
+	"description": "No.9 logo with a slowly spinning ring of text around it.",
+	"keywords": [ "logo", "badge", "spin", "hero" ],
+	"textdomain": "no9",
+	"attributes": {
+		"ringText": {
+			"type": "string",
+			"default": "Taiwanese · Bubble Tea · Taiwanese · Bubble Tea ·"
+		},
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string"
+		},
+		"alt": {
+			"type": "string",
+			"default": "No.9"
+		},
+		"size": {
+			"type": "number",
+			"default": 380
+		},
+		"duration": {
+			"type": "number",
+			"default": 60
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

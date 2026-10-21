@@ -1,0 +1,82 @@
+@use "../variables" as *;
+
+// Site footer — address, hours & legal line (parts/footer.html)
+.site-footer {
+	border-top: 1px solid rgba($white, 0.1);
+	padding: 40px 0 36px;
+	font-size: 14px;
+	color: rgba($white, 0.7);
+
+	&__wrap {
+		max-width: 1120px;
+		margin-inline: auto;
+		padding-inline: 1.5rem;
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		gap: 20px 56px;
+		align-items: start;
+	}
+
+	&__kicker {
+		font: italic 700 13px/1 var(--wp--preset--font-family--poppins);
+		color: $white;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	&__contact {
+		font-style: normal;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+		line-height: 1.5;
+
+		a {
+			color: $white;
+			text-decoration: none;
+			border-bottom: 1px solid rgba($white, 0.3);
+
+			&:hover {
+				border-bottom-color: $white;
+			}
+		}
+	}
+
+	&__hours {
+		display: flex;
+		flex-direction: column;
+		color: $white;
+		line-height: 1.5;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__legal {
+		grid-column: 1 / -1;
+		margin: 0;
+		padding-top: 18px;
+		border-top: 1px solid rgba($white, 0.1);
+
+		a {
+			color: $white;
+			margin-left: 12px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba($white, 0.3);
+
+			&:hover {
+				border-bottom-color: $white;
+			}
+		}
+	}
+}
+
+@media (max-width: 760px) {
+	.site-footer__wrap {
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+}

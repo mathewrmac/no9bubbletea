@@ -1,0 +1,160 @@
+@use "../variables" as *;
+
+// Menu categories — price cards aggregating each product's size/temperature
+// variants, in the style of the printed menu's `.cat` sections (no9/menu-categories)
+.wp-block-no9-menu-categories {
+	columns: 2 440px;
+	column-gap: 28px;
+
+	.jump {
+		column-span: all;
+		display: flex;
+		gap: 8px;
+		overflow-x: auto;
+		padding: 4px 2px 18px;
+		margin: 0 0 28px;
+		scrollbar-width: thin;
+
+		a {
+			flex: none;
+			text-decoration: none;
+			font: 600 14px/1 var(--wp--preset--font-family--poppins);
+			color: $navy;
+			padding: 10px 16px;
+			border-radius: 999px;
+			border: 2px solid $navy;
+			white-space: nowrap;
+
+			&:hover {
+				background: $navy;
+				color: $white;
+			}
+		}
+	}
+
+	.cat {
+		box-sizing: border-box;
+		break-inside: avoid;
+		background: $cream;
+		border: 2px solid $navy;
+		border-radius: 28px;
+		padding: 28px 28px 20px;
+		margin: 0 0 28px;
+		display: inline-block;
+		width: 100%;
+	}
+
+	.pill {
+		display: inline-block;
+		font: 700 22px/1 var(--wp--preset--font-family--poppins);
+		color: $navy;
+		border: 2.5px solid $navy;
+		border-radius: 999px;
+		padding: 10px 20px;
+		margin: 0 0 12px;
+	}
+
+	.blurb {
+		margin: 0 0 14px;
+		color: #55586a;
+		font-size: 15px;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 16px;
+		padding: 11px 0;
+		border-top: 1px solid rgba($navy, 0.14);
+	}
+
+	.thumb {
+		flex: none;
+		width: 56px;
+		height: 56px;
+		border-radius: 16px;
+		background: $white;
+		border: 1.5px solid rgba($navy, 0.14);
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+		color: $navy;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.nm {
+		font-weight: 500;
+		line-height: 1.35;
+		flex: 1;
+		min-width: 0;
+	}
+
+	.meta {
+		display: block;
+		font-size: 13px;
+		color: #6b6e7e;
+		font-weight: 400;
+		margin-top: 2px;
+	}
+
+	.pr {
+		display: flex;
+		gap: 14px;
+		flex: none;
+	}
+
+	.p {
+		font: 700 17px/1 var(--wp--preset--font-family--poppins);
+		color: $red;
+		white-space: nowrap;
+
+		small {
+			font-size: 12px;
+			margin-right: 2px;
+			color: $navy;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.wp-block-no9-menu-categories {
+		.cat {
+			padding: 22px 18px 14px;
+			border-radius: 22px;
+		}
+
+		.pill {
+			font-size: 19px;
+		}
+
+		li {
+			gap: 12px;
+		}
+
+		.thumb {
+			width: 46px;
+			height: 46px;
+			border-radius: 13px;
+		}
+
+		.pr {
+			gap: 10px;
+		}
+
+		.p {
+			font-size: 16px;
+		}
+	}
+}

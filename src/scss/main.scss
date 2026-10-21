@@ -1,0 +1,36 @@
+@use "variables" as *;
+@use "blocks/logo-badge";
+@use "blocks/menu-categories";
+@use "blocks/faq-list";
+@use "blocks/feed";
+@use "blocks/icon-button";
+@use "blocks/site-footer";
+
+body {
+	line-height: 1;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p) {
+	margin-block: $heading-gap;
+}
+
+:where(body:not(.editor-styles-wrapper)) :is(.bleeding-link, .bleeding-link *) {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.entry-content {
+	> * {
+		max-width: 1120px;
+		margin-inline: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	> * + * {
+		margin-block-start: $content-gap;
+	}
+}

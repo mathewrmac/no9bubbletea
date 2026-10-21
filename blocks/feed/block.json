@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "no9/feed",
+	"version": "1.0.0",
+	"title": "Feed",
+	"category": "media",
+	"icon": "format-gallery",
+	"description": "Grid of square photos from the media library. Click an image to open it in a Viewer.js lightbox.",
+	"keywords": [ "feed", "instagram", "gallery", "images", "viewer" ],
+	"textdomain": "no9",
+	"attributes": {
+		"images": {
+			"type": "array",
+			"default": [],
+			"items": { "type": "object" }
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": [ "no9-viewerjs", "file:./view.js" ],
+	"viewStyle": "no9-viewerjs",
+	"render": "file:./render.php"
+}

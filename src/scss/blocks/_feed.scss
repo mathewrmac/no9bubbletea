@@ -1,0 +1,53 @@
+@use "../variables" as *;
+
+// Feed — square photo grid with Viewer.js lightbox (no9/feed)
+.wp-block-no9-feed {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+
+	&__item {
+		position: relative;
+		display: block;
+		aspect-ratio: 1;
+		border: 2px solid $navy;
+		border-radius: 24px;
+		overflow: hidden;
+		background: $cream;
+		cursor: zoom-in;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s;
+		}
+
+		&:hover img {
+			transform: scale(1.04);
+		}
+
+		&:focus-visible {
+			outline: 3px solid $red;
+			outline-offset: 2px;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.wp-block-no9-feed {
+		grid-template-columns: 1fr;
+		gap: 10px;
+
+		&__item {
+			border-radius: 18px;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-no9-feed__item img {
+		transition: none;
+	}
+}

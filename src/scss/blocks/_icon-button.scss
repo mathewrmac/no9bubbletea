@@ -1,0 +1,95 @@
+// Icon Button block — see blocks/icon-button/
+//
+// Core's Button stylesheet does the button styling (the block declares
+// `"style": "wp-block-button"`), so this file only handles the icon layout,
+// the hover swap, and widths outside a Buttons block.
+
+.no9-icon-button {
+	// Core only sizes widths for buttons inside `.wp-block-buttons`; match it
+	// for a standalone Icon Button too.
+	&.has-custom-width > .no9-icon-button__link {
+		width: 100%;
+	}
+
+	&.wp-block-button__width-25 {
+		width: 25%;
+	}
+
+	&.wp-block-button__width-50 {
+		width: 50%;
+	}
+
+	&.wp-block-button__width-75 {
+		width: 75%;
+	}
+
+	&.wp-block-button__width-100 {
+		width: 100%;
+	}
+}
+
+.no9-icon-button__link {
+	// Beats core's `.wp-block-button__link { display: inline-block }`.
+	&.wp-block-button__link {
+		display: inline-flex;
+	}
+
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+
+	&.has-icon-after {
+		flex-direction: row-reverse;
+	}
+}
+
+.no9-icon-button__icon {
+	position: relative;
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	line-height: 0;
+}
+
+.no9-icon-button__icon-img {
+	display: block;
+	width: var(--no9-icon-button-icon-size, 24px);
+	height: auto;
+	max-width: none;
+
+	&.is-hover {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+}
+
+.no9-icon-button__link.has-hover-icon {
+	.no9-icon-button__icon-img {
+		transition: opacity 0.2s ease;
+	}
+
+	&:hover,
+	&:focus-visible {
+		.no9-icon-button__icon-img.is-default {
+			opacity: 0;
+		}
+
+		.no9-icon-button__icon-img.is-hover {
+			opacity: 1;
+		}
+	}
+}
+
+.no9-icon-button__label {
+	// Keep the label from stretching when the button has a set width.
+	flex: 0 1 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.no9-icon-button__link.has-hover-icon .no9-icon-button__icon-img {
+		transition-duration: 0s;
+	}
+}

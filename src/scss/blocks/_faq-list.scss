@@ -1,0 +1,100 @@
+@use "../variables" as *;
+
+// FAQ list — a list of expandable questions (no9/faq-list)
+.wp-block-no9-faq-list {
+	.faq-list-items {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		details {
+			background: $cream;
+			border: 2px solid $navy;
+			border-radius: 22px;
+			margin: 0;
+
+			summary {
+				list-style: none;
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 16px;
+				padding: 18px 22px;
+				font: 600 17px/1.35 var(--wp--preset--font-family--poppins);
+				color: $navy;
+				border-radius: 20px;
+
+				&::-webkit-details-marker {
+					display: none;
+				}
+
+				&::after {
+					content: "";
+					flex: none;
+					width: 12px;
+					height: 12px;
+					border-right: 2.5px solid $navy;
+					border-bottom: 2.5px solid $navy;
+					transform: translateY(-3px) rotate(45deg);
+					transition: transform 0.2s;
+				}
+			}
+
+			&[open] summary::after {
+				transform: translateY(3px) rotate(-135deg);
+			}
+
+			p {
+				margin: 0;
+				padding: 0 22px 20px;
+				color: $charcoal;
+				max-width: 62ch;
+			}
+
+			a {
+				color: $navy;
+				font-weight: 500;
+			}
+		}
+
+		.hours-table {
+			margin: 0 22px 20px;
+			border-collapse: collapse;
+			font-size: 15px;
+
+			th {
+				text-align: left;
+				font-weight: 500;
+				padding: 4px 32px 4px 0;
+			}
+
+			td {
+				padding: 4px 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.wp-block-no9-faq-list .faq-list-items {
+		details summary {
+			font-size: 16px;
+			padding: 16px 18px;
+		}
+
+		details p {
+			padding: 0 18px 18px;
+		}
+
+		.hours-table {
+			margin: 0 18px 18px;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-block-no9-faq-list .faq-list-items details summary::after {
+		transition: none;
+	}
+}

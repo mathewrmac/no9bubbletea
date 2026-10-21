@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "no9/faq-list",
+	"version": "1.0.0",
+	"title": "FAQ List",
+	"category": "widgets",
+	"icon": "editor-help",
+	"description": "A list of expandable questions, styled to match the site's FAQ section.",
+	"keywords": [ "faq", "questions", "accordion", "details" ],
+	"textdomain": "no9",
+	"attributes": {
+		"entries": {
+			"type": "array",
+			"default": [
+				{
+					"question": "What is bubble tea?",
+					"answer": "Bubble tea (also called boba) comes from Taiwan. It's tea, milk tea or fruit tea served with chewy tapioca pearls that you drink through a wide straw."
+				},
+				{
+					"question": "Do you have dairy-free milk?",
+					"answer": "Yes, you can swap to oat milk in your drink for an extra 50p."
+				},
+				{
+					"question": "Can I have my drink hot or iced?",
+					"answer": "All of our coffees and the hot chocolate come hot or iced. Fancy something else warm? Ask for it hot for an extra 20p."
+				},
+				{
+					"question": "What sizes do you do?",
+					"answer": "Most drinks come in medium or large. Prices for each size are shown on the menu."
+				},
+				{
+					"question": "Can I add toppings?",
+					"answer": "Yes. Milk bubble teas and iced fruit teas come with one boba topping included, and the Brown Sugar Series comes with tapioca boba. Extra toppings are 90p each, from popping boba to Oreo crumble. See the full list at the end of the menu."
+				},
+				{
+					"question": "Do you deliver?",
+					"answer": "Yes, you can order No.9 for delivery on <a href=\"#\">Deliveroo</a> and <a href=\"#\">Just Eat</a>."
+				},
+				{
+					"question": "When are you open?",
+					"answer": "<table class=\"hours-table\"><tbody><tr><th scope=\"row\">Monday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Tuesday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Wednesday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Thursday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Friday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Saturday</th><td>11am–7:30pm</td></tr><tr><th scope=\"row\">Sunday</th><td>12pm–6pm</td></tr></tbody></table>"
+				},
+				{
+					"question": "Where can I find you?",
+					"answer": "We're at <a href=\"https://www.google.com/maps/search/?api=1&query=50+Lichfield+St,+Wolverhampton+WV1+1DG\" target=\"_blank\" rel=\"noopener\">50 Lichfield St, Wolverhampton WV1 1DG</a>."
+				},
+				{
+					"question": "I have an allergy. Can you tell me what's in a drink?",
+					"answer": "Please call us on <a href=\"tel:+447851411444\">07851 411444</a> before you order and we'll talk you through the ingredients."
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}
